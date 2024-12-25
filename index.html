@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音视频技术博客 - 首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Microsoft YaHei', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #1e1e1e;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #00ff95;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00ff95, transparent);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(0, 255, 149, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: #2d2d2d;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff95;
+            background: #363636;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .featured-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .post-card {
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 149, 0.1);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-card h3 {
+            color: #00ff95;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #404040;
+            color: #00ff95;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #404040;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a1a;
+            color: #888;
+            margin-top: 3rem;
+            border-top: 1px solid #404040;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>音视频技术博客</h1>
+        <p>探索音视频技术的前沿，分享编解码经验，深入理解流媒体协议</p>
+    </section>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html">首页</a>
+                <a href="myhome.html">博客</a>
+                <a href="#">技术专题</a>
+                <a href="https://github.com/nighaway?tab=repositories" target="_blank">开源项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="about.html">关于我</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>精选文章</h2>
+        <div class="featured-posts">
+            <div class="post-card">
+                <h3>FFmpeg 视频转码性能优化实践</h3>
+                <div class="tags">
+                    <span class="tag">FFmpeg</span>
+                    <span class="tag">性能优化</span>
+                </div>
+                <p>深入探讨 FFmpeg 转码过程中的性能优化技巧，包括多线程编码、硬件加速以及关键参数调优...</p>
+                <div class="stats">
+                    <span>2024-03-20</span>
+                    <span>阅读: 1.2k</span>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>WebRTC 音频处理流程详解</h3>
+                <div class="tags">
+                    <span class="tag">WebRTC</span>
+                    <span class="tag">音频处理</span>
+                </div>
+                <p>详细分析 WebRTC 中的音频处理模块，包括回声消除、噪声抑制、自动增益控制等核心功能...</p>
+                <div class="stats">
+                    <span>2024-03-18</span>
+                    <span>阅读: 856</span>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>H.266/VVC 编码器性能测试报告</h3>
+                <div class="tags">
+                    <span class="tag">视频编码</span>
+                    <span class="tag">VVC</span>
+                </div>
+                <p>最新的 H.266/VVC 编码标准性能测试，包括与 H.265/HEVC 的对比分析及实际应用建议...</p>
+                <div class="stats">
+                    <span>2024-03-15</span>
+                    <span>阅读: 1.5k</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 音视频技术博客 | 专注音视频技术开发与分享</p>
+    </footer>
+</body>
+</html> 

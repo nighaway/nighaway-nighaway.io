@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 音视频技术博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Microsoft YaHei', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #1e1e1e;
+        }
+
+        nav {
+            background: #2d2d2d;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff95;
+            background: #363636;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #2d2d2d;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 255, 149, 0.1);
+        }
+
+        h1 {
+            color: #00ff95;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+
+        .profile-section h2 {
+            color: #00ff95;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .profile-section p {
+            margin-bottom: 1rem;
+            color: #bbb;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: #404040;
+            color: #00ff95;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a1a;
+            color: #888;
+            margin-top: 3rem;
+            border-top: 1px solid #404040;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html">首页</a>
+                <a href="myhome.html">博客</a>
+                <a href="#">技术专题</a>
+                <a href="https://github.com/nighaway?tab=repositories" target="_blank">开源项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="about.html">关于我</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>关于我</h1>
+        
+        <div class="profile-section">
+            <h2>个人简介</h2>
+            <p>资深音视频开发工程师，专注于音视频编解码、流媒体传输和实时通信领域。热衷于研究音视频技术的最新发展，并乐于分享技术经验。</p>
+        </div>
+
+        <div class="profile-section">
+            <h2>技术栈</h2>
+            <div class="skills-list">
+                <span class="skill-tag">FFmpeg</span>
+                <span class="skill-tag">WebRTC</span>
+                <span class="skill-tag">音频编解码</span>
+                <span class="skill-tag">视频编解码</span>
+                <span class="skill-tag">流媒体协议</span>
+                <span class="skill-tag">音频处理</span>
+                <span class="skill-tag">视频处理</span>
+                <span class="skill-tag">C/C++</span>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h2>工作经历</h2>
+            <p>在音视频领域有多年开发经验，参与过多个大型音视频项目的开发和优化工作。</p>
+        </div>
+
+        <div class="profile-section">
+            <h2>联系方式</h2>
+            <p>Email: your.email@example.com</p>
+            <p>GitHub: github.com/yourusername</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 音视频技术博客 | 专注音视频技术开发与分享</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客 - 音视频技术博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Microsoft YaHei', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #1e1e1e;
+        }
+
+        nav {
+            background: #2d2d2d;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff95;
+            background: #363636;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #00ff95;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #00ff95;
+        }
+
+        .header-subtitle {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 7fr 3fr;
+            gap: 2rem;
+        }
+
+        .main-content {
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 255, 149, 0.1);
+        }
+
+        .sidebar {
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .blog-post {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #404040;
+        }
+
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+
+        .post-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .post-tag {
+            background: #404040;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #00ff95;
+        }
+
+        .post-title {
+            color: #00ff95;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .post-excerpt {
+            color: #bbb;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        code {
+            background: #363636;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #00ff95;
+        }
+
+        .read-more {
+            color: #00ff95;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .categories, .recent-posts {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar h3 {
+            color: #00ff95;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .categories ul, .recent-posts ul {
+            list-style: none;
+        }
+
+        .categories li, .recent-posts li {
+            margin-bottom: 0.8rem;
+        }
+
+        .categories a, .recent-posts a {
+            color: #bbb;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .categories a:hover, .recent-posts a:hover {
+            color: #00ff95;
+        }
+
+        .category-count {
+            background: #404040;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #1a1a1a;
+            color: #888;
+            margin-top: 3rem;
+            border-top: 1px solid #404040;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .pagination a {
+            padding: 0.5rem 1rem;
+            background: #404040;
+            color: #bbb;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .pagination a:hover {
+            background: #00ff95;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html">首页</a>
+                <a href="myhome.html">博客</a>
+                <a href="#">技术专题</a>
+                <a href="https://github.com/nighaway?tab=repositories" target="_blank">开源项目</a>
+            </div>
+            <div class="nav-right">
+                <a href="about.html">关于我</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>音视频技术博客</h1>
+        <p class="header-subtitle">专注音视频编解码 | 流媒体技术 | 音视频处理</p>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <article class="blog-post">
+                <h2 class="post-title">FFmpeg 视频转码性能优化实践</h2>
+                <div class="post-meta">
+                    <span>2024-03-20</span>
+                    <span class="post-tag">FFmpeg</span>
+                    <span class="post-tag">性能优化</span>
+                </div>
+                <p class="post-excerpt">在本文中，我们将深入探讨 FFmpeg 转码过程中的性能优化技巧，包括多线程编码、硬件加速以及关键参数调优。示例代码：<code>ffmpeg -hwaccel cuda -i input.mp4 ...</code></p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </article>
+
+            <article class="blog-post">
+                <h2 class="post-title">WebRTC 音频处理流程详解</h2>
+                <div class="post-meta">
+                    <span>2024-03-18</span>
+                    <span class="post-tag">WebRTC</span>
+                    <span class="post-tag">音频处理</span>
+                </div>
+                <p class="post-excerpt">详细分析 WebRTC 中的音频处理模块，包括回声消除、噪声抑制、自动增益控制等核心功能的实现原理和优化方案。</p>
+                <a href="#" class="read-more">阅读全文 →</a>
+            </article>
+
+            <div class="pagination">
+                <a href="#">← 上一页</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">下一页 →</a>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="categories">
+                <h3>技术分类</h3>
+                <ul>
+                    <li><a href="#">音频编解码 <span class="category-count">12</span></a></li>
+                    <li><a href="#">视频编解码 <span class="category-count">15</span></a></li>
+                    <li><a href="#">流媒体协议 <span class="category-count">8</span></a></li>
+                    <li><a href="#">FFmpeg 开发 <span class="category-count">20</span></a></li>
+                    <li><a href="#">WebRTC <span class="category-count">10</span></a></li>
+                    <li><a href="#">性能优化 <span class="category-count">7</span></a></li>
+                </ul>
+            </div>
+
+            <div class="recent-posts">
+                <h3>最近文章</h3>
+                <ul>
+                    <li><a href="#">H.266/VVC 编码器性能测试报告</a></li>
+                    <li><a href="#">实时音视频传输延迟优化方案</a></li>
+                    <li><a href="#">音频3A算法实现与优化</a></li>
+                    <li><a href="#">RTMP 推流技术实践总结</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2024 音视频技术博客 | 专注音视频技术开发与分享</p>
+    </footer>
+</body>
+</html>
